@@ -1,0 +1,26 @@
+{
+    "collection_timestamp": "2026-09-15T22:53:59.488320",
+    "video_metadata": {
+        "title": "TAMASHA SEASON 5 | EPISODE 38 | 14 SEP 2026 | REALITY SHOW | ARY DIGITAL",
+        "channel_name": "ARY Digital HD",
+        "published_at": "2026-09-14T20:00:26Z"
+    },
+    "youtube_reported_stats": {
+        "total_views": "1362794",
+        "total_likes": "18659",
+        "total_comments": "10753",
+        "dislike_count_available": false
+    },
+    "actual_collection_stats": {
+        "total_rows_collected": 10753,
+        "top_level_comments_collected": 8232,
+        "replies_collected": 2521,
+        "average_comment_likes": 4.97,
+        "maximum_comment_likes": 2254
+    },
+    "data_quality_issues": {
+        "empty_comments": 2,
+        "replies_with_missing_parents_in_dataset": 0,
+        "note": "Differences between 'youtube_reported_stats' and 'actual_collection_stats' are normal due to YouTube API pagination limits, deleted comments, or moderation."
+    }
+}
