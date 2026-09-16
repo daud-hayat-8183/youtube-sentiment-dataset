@@ -92,27 +92,29 @@ export default function MainContent() {
   };
 
   return (
-    <main className="w-full relative z-10 flex flex-col items-center">
-      {status === "idle" && (
-        <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <main className="w-full relative z-10 flex flex-col items-center min-h-[70vh]">
+      {(status === "idle" || status === "generating") && (
+        <div className={`w-full transition-all duration-700 animate-in fade-in slide-in-from-bottom-4 ${status === "generating" ? "blur-md opacity-40 pointer-events-none scale-95" : ""}`}>
           <Hero />
-          <UrlGenerator onGenerate={handleGenerate} />
+          <UrlGenerator onGenerate={handleGenerate} disabled={status === "generating"} />
         </div>
       )}
 
       {status === "generating" && (
-        <div className="w-full px-4 pt-20 animate-in fade-in zoom-in-95 duration-500">
-          <ProgressPanel progress={progress} />
-          {progress.error && (
-            <div className="mt-8 text-center">
-              <button 
-                onClick={handleReset}
-                className="text-gray-500 hover:text-gray-800 font-medium underline"
-              >
-                Try again
-              </button>
-            </div>
-          )}
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-gray-900/20 backdrop-blur-sm animate-in fade-in duration-500">
+          <div className="w-full max-w-xl animate-in zoom-in-95 duration-500">
+            <ProgressPanel progress={progress} />
+            {progress.error && (
+              <div className="mt-8 text-center">
+                <button 
+                  onClick={handleReset}
+                  className="px-8 py-3 bg-white/90 hover:bg-white text-gray-900 font-bold rounded-full shadow-xl transition-all border border-gray-200 hover:-translate-y-1"
+                >
+                  Dismiss Error & Try Again
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
 

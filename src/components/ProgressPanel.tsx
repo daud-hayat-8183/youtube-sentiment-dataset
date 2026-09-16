@@ -63,11 +63,14 @@ export default function ProgressPanel({ progress }: ProgressPanelProps) {
   }
 
   return (
-    <div aria-live="polite" className="w-full max-w-2xl mx-auto glass-panel rounded-2xl p-6 sm:p-8 relative overflow-hidden">
-      <div className="absolute top-4 right-4">
+    <div aria-live="polite" className="w-full max-w-xl mx-auto rounded-3xl p-8 sm:p-12 relative overflow-hidden bg-white/60 backdrop-blur-3xl border border-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.15)] flex flex-col items-center text-center">
+      {/* Background ambient glow inside the glass modal */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-purple-100/30 pointer-events-none" />
+
+      <div className="absolute top-4 right-4 z-10">
         <button
           onClick={() => setSoundEnabled(!soundEnabled)}
-          className="p-2 text-gray-500 hover:text-gray-800 transition-colors bg-white/50 rounded-full hover:bg-white/80"
+          className="p-2.5 text-gray-500 hover:text-indigo-600 transition-all duration-300 bg-white/60 border border-white/60 rounded-full hover:bg-white shadow-sm hover:shadow-md"
           title={soundEnabled ? "Disable sound" : "Enable sound"}
           aria-label="Toggle sound"
         >
@@ -75,39 +78,42 @@ export default function ProgressPanel({ progress }: ProgressPanelProps) {
         </button>
       </div>
 
-      <div className="flex flex-col items-center text-center space-y-6">
+      <div className="flex flex-col items-center text-center space-y-6 relative z-10 w-full">
         <div className="relative">
           {progress.isComplete ? (
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 border border-green-300/50 text-green-600 rounded-full flex items-center justify-center shadow-lg">
+              <CheckCircle2 className="w-10 h-10" />
             </div>
           ) : (
-            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center animate-pulse">
-              <Loader2 className="w-8 h-8 animate-spin" />
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-indigo-100 border border-blue-200/50 text-indigo-600 rounded-full flex items-center justify-center shadow-lg animate-pulse relative">
+              <Loader2 className="w-10 h-10 animate-spin relative z-10" />
+              <div className="absolute inset-0 rounded-full border-4 border-indigo-400/20 animate-ping"></div>
             </div>
           )}
         </div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <div className="w-full">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
             {progress.stage}
           </h2>
           {progress.count !== undefined && progress.count > 0 && (
-            <p className="text-lg text-blue-700 font-medium font-mono bg-blue-50/50 inline-block px-4 py-1 rounded-full">
-              {progress.count.toLocaleString()} records processed
-            </p>
+            <div className="mt-2">
+              <span className="text-lg text-indigo-800 font-bold font-mono bg-white/70 border border-white shadow-sm inline-block px-5 py-1.5 rounded-full">
+                {progress.count.toLocaleString()} records processed
+              </span>
+            </div>
           )}
           {progress.subStage && (
-            <p className="text-gray-500 mt-2 text-sm">
+            <p className="text-gray-600 font-semibold mt-3 text-sm">
               {progress.subStage}
             </p>
           )}
         </div>
 
-        {/* Indeterminate progress bar */}
+        {/* Indeterminate liquid progress bar */}
         {!progress.isComplete && (
-          <div className="w-full h-2 bg-gray-200/50 rounded-full overflow-hidden relative">
-            <div className="absolute top-0 left-0 h-full w-1/3 bg-blue-500 rounded-full animate-[progress_1.5s_ease-in-out_infinite]" />
+          <div className="w-full h-3 bg-gray-200/50 rounded-full overflow-hidden relative shadow-inner mt-4">
+            <div className="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full animate-[progress_1.5s_ease-in-out_infinite]" />
           </div>
         )}
       </div>
