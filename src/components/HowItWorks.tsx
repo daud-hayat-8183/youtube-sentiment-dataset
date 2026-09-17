@@ -36,7 +36,7 @@ export default function HowItWorks() {
                 <div className="w-full h-full rounded-full bg-indigo-500 animate-ping opacity-30"></div>
               </div>
               
-              <div className="glass-panel-strong p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 h-full flex flex-col bg-white/50 backdrop-blur-2xl border border-white/70 group-hover:bg-white/70">
+              <div className="relative h-full pt-12 pb-8 px-6 sm:px-8 bg-white/30 backdrop-blur-2xl rounded-3xl border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.05),inset_0_0_30px_rgba(255,255,255,0.6)] flex flex-col items-center text-center group-hover:-translate-y-2 group-hover:shadow-[0_30px_60px_rgba(99,102,241,0.15),inset_0_0_40px_rgba(255,255,255,0.8)] transition-all duration-500 z-10">
                 <div className="text-indigo-800 font-mono text-sm font-extrabold mb-4 tracking-widest uppercase bg-indigo-100/50 inline-block px-3 py-1 rounded-full w-max border border-indigo-200">Stage 0{idx + 1}</div>
                 <h3 className="text-2xl font-black text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-800 font-semibold leading-relaxed">{step.desc}</p>

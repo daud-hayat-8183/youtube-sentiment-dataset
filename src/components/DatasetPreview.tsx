@@ -20,47 +20,55 @@ export default function DatasetPreview() {
       <div className="flex flex-col lg:flex-row gap-6 items-stretch">
         
         {/* Terminal/JSON Preview */}
-        <div className="flex-1 rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-white/40 backdrop-blur-2xl flex flex-col group relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-blue-50/10 pointer-events-none"></div>
-          <div className="bg-white/50 px-4 py-3 border-b border-white/60 flex items-center gap-2 relative z-10">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-red-400"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+        <div className="flex-1 flex flex-col">
+          <div className="bg-gray-900/70 backdrop-blur-3xl rounded-3xl overflow-hidden border border-gray-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] h-full flex flex-col">
+            <div className="px-6 py-4 border-b border-gray-700/50 flex items-center gap-3 bg-gray-800/40">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
+              <span className="text-gray-400 text-sm font-mono ml-2 flex items-center gap-2">
+                <Terminal className="w-3.5 h-3.5" /> schema.json
+              </span>
             </div>
-            <div className="ml-4 flex items-center text-xs font-mono font-bold text-gray-700 gap-2">
-              <Terminal className="w-3.5 h-3.5" /> schema.json
+            <div className="p-6 overflow-x-auto flex-grow relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/40 pointer-events-none"></div>
+              <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+                <code>{`{
+  "dataset": {
+    "id": "youtube_comments",
+    "format": "CSV",
+    "encoding": "UTF-8",
+    "features": [
+      "video_id",
+      "comment_id",
+      "text_clean",
+      "author",
+      "likes",
+      "published_at",
+      "is_reply",
+      "parent_id"
+    ]
+  }
+}`}</code>
+              </pre>
             </div>
-          </div>
-          <div className="p-6 font-mono text-sm overflow-x-auto text-blue-900 flex-1 flex flex-col justify-center relative z-10 font-medium">
-            <pre className="leading-relaxed">
-{`{
-  "features": {
-    "video_id": "string",
-    "comment_id": "string (unique)",
-    "parent_comment_id": "string | null",
-    "comment_type": "enum[TOP_LEVEL, REPLY]",
-    "cleaned_comment": "string (escaped)",
-    "like_count": "integer",
-    "published_at": "datetime (ISO 8601)"
-  },
-  "target": "sentiment_analysis"
-}`}
-            </pre>
           </div>
         </div>
 
         {/* Visual Data Grid Preview */}
-        <div className="flex-[2] rounded-3xl overflow-hidden shadow-xl border border-white/60 bg-white/40 backdrop-blur-2xl flex flex-col">
-          <div className="bg-white/50 px-6 py-4 border-b border-white/60 flex items-center justify-between">
-            <div className="flex items-center gap-2 font-bold text-gray-900">
-              <Database className="w-5 h-5 text-blue-600" /> DataFrame Preview
+        <div className="lg:col-span-2">
+          <div className="bg-white/30 backdrop-blur-3xl rounded-3xl overflow-hidden border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.05),inset_0_0_30px_rgba(255,255,255,0.6)] h-full flex flex-col">
+            <div className="bg-white/40 px-6 py-4 border-b border-white/50 flex items-center justify-between">
+              <div className="flex items-center gap-2 font-extrabold text-gray-900">
+                <Database className="w-5 h-5 text-blue-600" /> DataFrame Preview
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1 bg-white/60 rounded-full text-xs font-bold text-gray-800 border border-white/80 shadow-[inset_0_0_10px_rgba(255,255,255,1)]">
+                <Code2 className="w-3.5 h-3.5" /> import pandas as pd
+              </div>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1 bg-white/80 rounded-full text-xs font-bold text-gray-700 border border-white shadow-sm">
-              <Code2 className="w-3.5 h-3.5" /> import pandas as pd
-            </div>
-          </div>
-          <div className="overflow-x-auto p-4 flex-1">
+            <div className="overflow-x-auto p-4 flex-1">
             <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr className="border-b border-gray-300 text-xs uppercase tracking-wider text-gray-600 font-extrabold">
