@@ -43,11 +43,12 @@ html {
 .bg-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(80px); /* Reduced from 120px for performance */
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.4;
   animation: float 20s infinite ease-in-out alternate;
   pointer-events: none;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {

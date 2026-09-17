@@ -39,18 +39,18 @@ export default function UrlGenerator({ onGenerate, disabled }: UrlGeneratorProps
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-4 pb-16 flex flex-col items-center relative z-20">
+    <div className="w-full max-w-3xl lg:max-w-4xl mx-auto px-4 pb-16 lg:pb-20 flex flex-col items-center relative z-20">
       <div 
         className={cn(
-          "relative flex items-center w-full max-w-2xl p-2 rounded-full glass-panel-strong transition-all duration-500 overflow-hidden group",
+          "relative flex items-center w-full max-w-2xl lg:max-w-3xl p-2 lg:p-2.5 rounded-full glass-panel-strong transition-all duration-500 overflow-hidden group",
           error ? "border-red-400 ring-2 ring-red-100/50" : "focus-within:ring-4 focus-within:ring-blue-200/50 hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] focus-within:shadow-[0_8px_32px_rgba(59,130,246,0.2)]"
         )}
       >
         {/* Animated background glow effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100/0 via-blue-100/20 to-purple-100/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-        <div className="pl-5 pr-3 text-blue-500 relative z-10">
-          <Sparkles className="w-5 h-5 opacity-70" />
+        <div className="pl-5 lg:pl-6 pr-3 text-blue-500 relative z-10">
+          <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 opacity-70" />
         </div>
         
         <input
@@ -60,32 +60,32 @@ export default function UrlGenerator({ onGenerate, disabled }: UrlGeneratorProps
           onKeyDown={handleKeyDown}
           disabled={disabled}
           placeholder="Paste YouTube video, short, or stream link..."
-          className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400 text-lg py-3 min-w-0 relative z-10 selection:bg-blue-100"
+          className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400 text-lg lg:text-xl py-3 lg:py-4 min-w-0 relative z-10 selection:bg-blue-100"
         />
         
         <button
           onClick={validateAndGenerate}
           disabled={disabled || !url.trim()}
-          className="ml-2 bg-gray-900 hover:bg-black text-white font-semibold py-3.5 px-8 rounded-full flex items-center gap-2 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap relative z-10"
+          className="ml-2 bg-gray-900 hover:bg-black text-white font-semibold py-3.5 px-8 lg:py-4 lg:px-10 lg:text-lg rounded-full flex items-center gap-2 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap relative z-10"
         >
-          Generate <ArrowRight className="w-4 h-4 hidden sm:block transition-transform group-hover:translate-x-1" />
+          Generate <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 hidden sm:block transition-transform group-hover:translate-x-1" />
         </button>
       </div>
       
       {error && (
-        <p className="text-red-500 mt-4 font-medium text-sm animate-in fade-in slide-in-from-top-1">
+        <p className="text-red-500 mt-4 lg:mt-5 font-medium text-sm lg:text-base animate-in fade-in slide-in-from-top-1">
           {error}
         </p>
       )}
       
-      <div className="mt-6 flex flex-wrap justify-center gap-3 select-none">
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite]">
+      <div className="mt-6 lg:mt-8 flex flex-wrap justify-center gap-3 lg:gap-4 select-none">
+        <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full bg-white/30 border border-white/50 text-xs lg:text-sm font-semibold text-gray-600 backdrop-blur-md shadow-sm animate-[hover-float_4s_ease-in-out_infinite] will-change-transform">
           NLP-Ready Output
         </span>
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite_0.5s]">
+        <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full bg-white/30 border border-white/50 text-xs lg:text-sm font-semibold text-gray-600 backdrop-blur-md shadow-sm animate-[hover-float_4s_ease-in-out_infinite_0.5s] will-change-transform">
           Sentiment Analysis
         </span>
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite_1s]">
+        <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full bg-white/30 border border-white/50 text-xs lg:text-sm font-semibold text-gray-600 backdrop-blur-md shadow-sm animate-[hover-float_4s_ease-in-out_infinite_1s] will-change-transform">
           Engagement Metrics
         </span>
       </div>
