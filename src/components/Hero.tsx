@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center text-center pt-24 pb-12 px-4 relative z-10">
+    <div className="flex flex-col items-center text-center pt-24 pb-12 px-4 relative z-10 select-none">
       
       {/* Title with flex wrapping so it doesn't break awkwardly on desktop */}
       <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-extrabold tracking-tight text-gray-900 leading-[1.1] max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-2">

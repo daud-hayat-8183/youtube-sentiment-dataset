@@ -15,7 +15,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-32 relative z-20">
+    <section className="w-full max-w-6xl mx-auto px-4 py-32 relative z-20 select-none">
       <div className="text-center mb-20">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">The Data Pipeline</h2>
         <p className="text-lg text-gray-800 max-w-2xl mx-auto font-medium">
@@ -30,7 +30,7 @@ export default function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
           {steps.map((step, idx) => (
-            <div key={step.title} className="group relative">
+            <div key={step.title} className="group relative animate-[hover-float_4s_ease-in-out_infinite]" style={{ animationDelay: `${idx * 0.4}s` }}>
               {/* Glowing Node */}
               <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-4 border-indigo-200 shadow-[0_0_20px_rgba(99,102,241,0.6)] z-0 group-hover:scale-125 transition-transform duration-500">
                 <div className="w-full h-full rounded-full bg-indigo-500 animate-ping opacity-30"></div>

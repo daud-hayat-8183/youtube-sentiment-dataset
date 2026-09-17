@@ -78,14 +78,14 @@ export default function UrlGenerator({ onGenerate, disabled }: UrlGeneratorProps
         </p>
       )}
       
-      <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm">
+      <div className="mt-6 flex flex-wrap justify-center gap-3 select-none">
+        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite]">
           NLP-Ready Output
         </span>
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm">
+        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite_0.5s]">
           Sentiment Analysis
         </span>
-        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm">
+        <span className="px-3 py-1 rounded-full bg-white/40 border border-white/60 text-xs font-semibold text-gray-600 backdrop-blur-sm shadow-sm animate-[hover-float_4s_ease-in-out_infinite_1s]">
           Engagement Metrics
         </span>
       </div>

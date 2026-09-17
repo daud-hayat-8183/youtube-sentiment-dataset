@@ -10,7 +10,7 @@ const LinkedinIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-white/40 bg-white/20 backdrop-blur-2xl py-16 relative z-30">
+    <footer className="w-full border-t border-white/40 bg-white/20 backdrop-blur-2xl py-16 relative z-30 select-none">
       <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
         <div className="mb-8 text-center">
           <p className="text-gray-900 font-black text-2xl tracking-tighter">CommentLens</p>
@@ -19,25 +19,9 @@ export default function Footer() {
           </p>
         </div>
         
-        <p className="text-sm font-bold text-indigo-900 bg-indigo-100/70 px-6 py-2 rounded-full mb-8 border border-indigo-200/60 shadow-sm uppercase tracking-widest">
+        <p className="text-sm font-bold text-indigo-900 bg-indigo-100/70 px-6 py-2 rounded-full border border-indigo-200/60 shadow-sm uppercase tracking-widest animate-[hover-float_4s_ease-in-out_infinite]">
           Crafted by Dawood Hayat
         </p>
-
-        <div className="flex gap-4">
-          <a href="mailto:daudhayat51@gmail.com" className="p-3.5 text-gray-500 hover:text-indigo-600 hover:bg-white bg-white/40 border border-white/60 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1" aria-label="Email">
-            <Mail className="w-5 h-5" strokeWidth={2.5} />
-          </a>
-          <a href="https://linkedin.com/in/dawoodhayat/" target="_blank" rel="noreferrer" className="p-3.5 text-gray-500 hover:text-blue-700 hover:bg-white bg-white/40 border border-white/60 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1" aria-label="LinkedIn">
-            <LinkedinIcon />
-          </a>
-          <a href="https://github.com/daud-hayat-8183" target="_blank" rel="noreferrer" className="p-3.5 text-gray-500 hover:text-gray-900 hover:bg-white bg-white/40 border border-white/60 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1" aria-label="GitHub">
-            <GithubIcon />
-          </a>
-          {/* WhatsApp Direct Link */}
-          <a href="https://wa.me/923295129250" target="_blank" rel="noreferrer" className="p-3.5 text-gray-500 hover:text-green-600 hover:bg-white bg-white/40 border border-white/60 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1" aria-label="WhatsApp">
-            <Phone className="w-5 h-5" strokeWidth={2.5} />
-          </a>
-        </div>
       </div>
     </footer>
   );

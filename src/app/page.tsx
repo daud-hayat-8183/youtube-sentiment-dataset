@@ -2,10 +2,12 @@ import MainContent from "@/components/MainContent";
 import HowItWorks from "@/components/HowItWorks";
 import DatasetPreview from "@/components/DatasetPreview";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Header />
       <MainContent />
       <div className="relative z-10 bg-white/20 backdrop-blur-xl border-t border-white/40 mt-auto">
         <HowItWorks />
