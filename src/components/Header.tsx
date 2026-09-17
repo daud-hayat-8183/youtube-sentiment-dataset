@@ -12,16 +12,16 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full p-6 lg:p-8 flex justify-center animate-in slide-in-from-top-full duration-700 pointer-events-none select-none">
       <div className="glass-panel-strong rounded-full px-6 py-3 lg:px-8 lg:py-4 flex gap-4 lg:gap-6 pointer-events-auto animate-[hover-float_4s_ease-in-out_infinite] shadow-[0_10px_40px_rgba(0,0,0,0.1),inset_0_0_20px_rgba(255,255,255,0.6)] bg-white/40 backdrop-blur-3xl border border-white/60 will-change-transform">
-        <a href="mailto:daudhayat51@gmail.com" className="text-gray-500 hover:text-indigo-600 transition-colors duration-300 hover:scale-110" aria-label="Email">
+        <a href="mailto:daudhayat51@gmail.com" className="text-gray-500 hover:text-indigo-600 transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md" aria-label="Email">
           <Mail className="w-5 h-5" strokeWidth={2.5} />
         </a>
-        <a href="https://linkedin.com/in/dawoodhayat/" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-blue-700 transition-colors duration-300 hover:scale-110" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/dawoodhayat/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-700 transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md" aria-label="LinkedIn">
           <LinkedinIcon />
         </a>
-        <a href="https://github.com/daud-hayat-8183" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-gray-900 transition-colors duration-300 hover:scale-110" aria-label="GitHub">
+        <a href="https://github.com/daud-hayat-8183" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md" aria-label="GitHub">
           <GithubIcon />
         </a>
-        <a href="https://wa.me/923295129250" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-green-600 transition-colors duration-300 hover:scale-110" aria-label="WhatsApp">
+        <a href="https://wa.me/923295129250" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-600 transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md" aria-label="WhatsApp">
           <Phone className="w-5 h-5" strokeWidth={2.5} />
         </a>
       </div>
