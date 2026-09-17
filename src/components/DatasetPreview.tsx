@@ -97,6 +97,7 @@ export default function DatasetPreview() {
             </table>
           </div>
         </div>
+        </div>
 
       </div>
     </section>
